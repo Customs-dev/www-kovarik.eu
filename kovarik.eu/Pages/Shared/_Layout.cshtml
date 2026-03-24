@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html lang="cs" data-bs-theme="dark">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@(ViewData["Title"]) — Mgr. Roman Kovařík | .NET Developer</title>
+
+    <!-- SEO Meta -->
+    <meta name="description" content="@(ViewData["MetaDescription"] ?? "Mgr. Roman Kovařík — .NET vývojář specializující se na webové aplikace, ASP.NET Core, Angular, MVC architekturu a AI integraci.")" />
+    <meta name="keywords" content="Roman Kovařík, .NET developer, C#, ASP.NET Core, Angular, AI integrace, webový vývojář, Česká republika" />
+    <meta name="author" content="Mgr. Roman Kovařík" />
+    <meta name="robots" content="index, follow" />
+    @{
+        var canonicalPath = Context.Request.Path.Value ?? "/";
+        if (canonicalPath.Length > 1) { canonicalPath = canonicalPath.TrimEnd('/').ToLowerInvariant(); }
+        var canonicalUrl = $"https://kovarik.eu{canonicalPath}";
+    }
+    <link rel="canonical" href="@canonicalUrl" />
+
+    <!-- Open Graph (Facebook, LinkedIn) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="@(ViewData["Title"]) — Mgr. Roman Kovařík" />
+    <meta property="og:description" content="@(ViewData["MetaDescription"] ?? "Mgr. Roman Kovařík — .NET vývojář specializující se na webové aplikace, ASP.NET Core, Angular, MVC architekturu a AI integraci.")" />
+    <meta property="og:url" content="@canonicalUrl" />
+    <meta property="og:site_name" content="kovarik.eu" />
+    <meta property="og:locale" content="cs_CZ" />
+    <meta property="og:image" content="https://kovarik.eu/img/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="@(ViewData["Title"]) — Mgr. Roman Kovařík" />
+    <meta name="twitter:description" content="@(ViewData["MetaDescription"] ?? "Mgr. Roman Kovařík — .NET vývojář specializující se na webové aplikace, ASP.NET Core, Angular, MVC architekturu a AI integraci.")" />
+    <meta name="twitter:image" content="https://kovarik.eu/img/og-image.png" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="~/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="~/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="~/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="~/apple-touch-icon.png" />
+
+    @await RenderSectionAsync("Head", required: false)
+
+    <script type="importmap"></script>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/kovarik.eu.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <!-- Scroll progress indicator -->
+    <div id="scrollProgress"></div>
+
+    <header>
+        <nav class="navbar navbar-expand-md fixed-top navbar-dark" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="/#hero">
+                    <i class="fa-solid fa-terminal me-2"></i>kovarik.eu
+                </a>
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Navigace">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/#about">O mně</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/#skills">Technologie</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/#experience">Zkušenosti</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/#projects">Projekty</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/#contact">Kontakt</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main role="main">
+        @RenderBody()
+    </main>
+
+    <footer class="py-4 text-center" style="background-color: var(--bg-darker);">
+        <div class="container">
+            <p class="text-secondary mb-1">
+                &copy; @DateTime.Now.Year Mgr. Roman Kovařík &mdash; Postaveno na .NET @System.Environment.Version.Major.ToString().TrimEnd('.') &amp; Razor Pages
+            </p>
+            <p class="text-secondary small mb-1">
+                <a href="/privacy" class="text-secondary text-decoration-none">Zásady ochrany osobních údajů</a>
+            </p>
+            <p class="text-secondary small mb-0">
+                <a href="/#hero" class="text-secondary text-decoration-none"><i class="fa-solid fa-arrow-up me-1"></i>Zpět nahoru</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

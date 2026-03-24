@@ -1,0 +1,6 @@
+# robots.txt for kovarik.eu
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://kovarik.eu/sitemap.xml

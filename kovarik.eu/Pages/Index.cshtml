@@ -1,0 +1,380 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Osobní webová prezentace";
+    ViewData["MetaDescription"] = "Mgr. Roman Kovařík — zkušený .NET vývojář. Specializace na ASP.NET Core, Angular, MVC, C# a integraci umělé inteligence do webových aplikací.";
+}
+
+@section Head {
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "Person",
+        "name": "Mgr. Roman Kovařík",
+        "url": "https://kovarik.eu",
+        "jobTitle": ".NET Developer",
+        "description": "Zkušený .NET vývojář specializující se na webové aplikace, ASP.NET Core, Angular, MVC architekturu a AI integraci.",
+        "knowsAbout": [".NET", "C#", "ASP.NET Core", "Angular", "TypeScript", "AI", "Azure", "SQL Server", "MVC", "Razor Pages"],
+        "address": {
+            "@@type": "PostalAddress",
+            "addressCountry": "CZ"
+        },
+        "sameAs": [
+            "https://github.com/customs-dev"
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "WebSite",
+        "name": "kovarik.eu",
+        "url": "https://kovarik.eu",
+        "description": "Osobní webová prezentace Mgr. Romana Kovaříka — .NET Developer & AI Enthusiast",
+        "inLanguage": "cs"
+    }
+    </script>
+}
+
+<!-- ============================
+     HERO SECTION
+     ============================ -->
+<section id="hero" class="hero-section">
+    <canvas id="particleCanvas"></canvas>
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-5 mb-lg-0">
+                <p class="hero-label fade-in">// Vítejte na mém webu</p>
+                <h1 class="hero-name fade-in fade-in-delay-1">Mgr. Roman<br />Kovařík</h1>
+                <p class="hero-title fade-in fade-in-delay-2">
+                    <span id="typingText"></span><span class="typing-cursor"></span>
+                </p>
+                <p class="hero-description fade-in fade-in-delay-3">
+                    Specializuji se na vývoj webových aplikací postavených na platformě .NET,
+                    MVC architektuře, Angular SPA a integraci umělé inteligence do moderních řešení.
+                </p>
+                <div class="d-flex gap-3 flex-wrap fade-in fade-in-delay-4">
+                    <a href="#contact" class="btn btn-accent">
+                        <i class="fa-solid fa-paper-plane me-2"></i>Kontaktujte mě
+                    </a>
+                    <a href="#projects" class="btn btn-outline-accent">
+                        <i class="fa-solid fa-code me-2"></i>Moje projekty
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-5 offset-lg-1">
+                <div class="hero-code-block fade-in fade-in-delay-2">
+                    <div class="code-dots">
+                        <span></span><span></span><span></span>
+                    </div>
+                    <code>
+                        <span class="code-keyword">public class</span> <span class="code-type">Developer</span><br />
+                        <span class="code-bracket">{</span><br />
+                        &nbsp;&nbsp;<span class="code-keyword">public string</span> <span class="code-property">Name</span> => <span class="code-string">"Roman Kovařík"</span>;<br />
+                        &nbsp;&nbsp;<span class="code-keyword">public string</span> <span class="code-property">Title</span> => <span class="code-string">"Mgr."</span>;<br />
+                        &nbsp;&nbsp;<span class="code-keyword">public string[]</span> <span class="code-property">Skills</span> =><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;[<span class="code-string">".NET"</span>, <span class="code-string">"Angular"</span>, <span class="code-string">"AI"</span>];<br />
+                        &nbsp;&nbsp;<span class="code-keyword">public bool</span> <span class="code-property">LovesToCode</span> => <span class="code-keyword">true</span>;<br />
+                        <span class="code-bracket">}</span>
+                    </code>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================
+     O MNĚ
+     ============================ -->
+<section id="about" class="section-alt">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <span class="section-label fade-in">// O mně</span>
+                <h2 class="section-title fade-in">Kdo jsem</h2>
+                <hr class="section-divider fade-in" />
+                <div class="about-text fade-in">
+                    <p>
+                        Jsem zkušený softwarový vývojář se zaměřením na technologie .NET a moderní
+                        webový vývoj. Mám za sebou roky praxe v návrhu a implementaci webových
+                        aplikací — od firemních informačních systémů po veřejné internetové prezentace.
+                    </p>
+                    <p>
+                        V současné době se intenzivně věnuji integraci AI nástrojů do vývojového
+                        procesu a snažím se propojit klasický enterprise vývoj s možnostmi,
+                        které nabízí velké jazykové modely a služby jako OpenAI, Anthropic a další.
+                    </p>
+                    <p>
+                        Kromě vývoje mám zkušenosti s vedením menších týmů, code review,
+                        CI/CD pipeline a architektonickým designem aplikací.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-5 offset-lg-1">
+                <div class="about-highlights fade-in">
+                    <div class="highlight-item">
+                        <span class="highlight-number">30+</span>
+                        <span class="highlight-label">Let v IT</span>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-number">.NET</span>
+                        <span class="highlight-label">Primární stack</span>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-number">AI</span>
+                        <span class="highlight-label">Integrace</span>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-number">Web</span>
+                        <span class="highlight-label">Aplikace</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================
+     TECHNOLOGIE
+     ============================ -->
+<section id="skills">
+    <div class="container">
+        <span class="section-label fade-in">// Technologie</span>
+        <h2 class="section-title fade-in">Můj tech stack</h2>
+        <p class="section-subtitle fade-in">Technologie a nástroje, se kterými pracuji denně i v rámci dlouhodobých projektů.</p>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="skill-category fade-in">
+                    <h3 class="skill-category-title"><i class="fa-solid fa-server"></i> Backend</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">C#</span>
+                        <span class="skill-tag">.NET 10</span>
+                        <span class="skill-tag">ASP.NET Core</span>
+                        <span class="skill-tag">Razor Pages</span>
+                        <span class="skill-tag">MVC</span>
+                        <span class="skill-tag">Web API</span>
+                        <span class="skill-tag">Entity Framework</span>
+                        <span class="skill-tag">LINQ</span>
+                        <span class="skill-tag">SignalR</span>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in">
+                    <h3 class="skill-category-title"><i class="fa-solid fa-palette"></i> Frontend</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Angular</span>
+                        <span class="skill-tag">TypeScript</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">HTML5 / CSS3</span>
+                        <span class="skill-tag">Bootstrap</span>
+                        <span class="skill-tag">RxJS</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="skill-category fade-in">
+                    <h3 class="skill-category-title"><i class="fa-solid fa-brain"></i> AI &amp; Cloud</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Azure OpenAI</span>
+                        <span class="skill-tag">GitHub Copilot</span>
+                        <span class="skill-tag">Docker</span>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in">
+                    <h3 class="skill-category-title"><i class="fa-solid fa-database"></i> Data &amp; Nástroje</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">SQL Server</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">GitHub</span>
+                        <span class="skill-tag">CI/CD</span>
+                        <span class="skill-tag">Visual Studio</span>
+                        <span class="skill-tag">VS Code</span>
+                        <span class="skill-tag">Rider</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================
+     ZKUŠENOSTI
+     ============================ -->
+<section id="experience" class="section-alt">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5 mb-4 mb-lg-0">
+                <span class="section-label fade-in">// Zkušenosti</span>
+                <h2 class="section-title fade-in">Profesní kariéra</h2>
+                <hr class="section-divider fade-in" />
+                <p class="section-subtitle fade-in" style="max-width: none;">
+                    Přehled klíčových pozic a milníků mé kariéry ve světě softwarového vývoje.
+                </p>
+            </div>
+            <div class="col-lg-6 offset-lg-1">
+                <div class="timeline fade-in">
+                    <div class="timeline-item">
+                        <span class="timeline-period">2020 — současnost</span>
+                        <h4 class="timeline-role">Senior .NET Developer</h4>
+                        <p class="timeline-company">Czech Customs</p>
+                        <p class="timeline-desc">
+                            Vývoj enterprise webových aplikací v .NET, návrh architektury,
+                            integrace AI služeb, mentoring juniorních vývojářů.
+                        </p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="timeline-period">2007 — 2020</span>
+                        <h4 class="timeline-role">Analytik, Databázový specialista, .NET Developer</h4>
+                        <p class="timeline-company">Czech Customs</p>
+                        <p class="timeline-desc">
+                            Zkušenosti s kompletním cyklem zpracování dat. Vizualizace a interpretace analytických výsledků,
+                            praxe s tvorbou datových reportů a dashboardů, vývoj webových aplikací, ASP.NET MVC,
+                            angular frontend, práce s SQL Server a Entity Framework.
+                        </p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="timeline-period">1995 — 2007</span>
+                        <h4 class="timeline-role">Informatik</h4>
+                        <p class="timeline-company">Czech Customs</p>
+                        <p class="timeline-desc">
+                            Správa sítí, správa aplikací, IT uživatelská podpora, údržba informačních systémů.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================
+     PROJEKTY
+     ============================ -->
+<section id="projects">
+    <div class="container">
+        <span class="section-label fade-in">// Projekty</span>
+        <h2 class="section-title fade-in">Vybrané projekty</h2>
+        <p class="section-subtitle fade-in">Ukázky projektů, na kterých jsem pracoval nebo které mě technicky obohatily.</p>
+
+        <div class="row g-4">
+            <!-- TODO: Nahraďte skutečnými projekty -->
+            <div class="col-md-6 col-lg-4 fade-in fade-in-delay-1">
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+                    <h4>kovarik.eu</h4>
+                    <p>Osobní webová prezentace postavená na .NET 10 a Razor Pages s moderním dark theme designem.</p>
+                    <div class="project-tech">
+                        <span>.NET 10</span>
+                        <span>Razor Pages</span>
+                        <span>Bootstrap 5</span>
+                        <span>CSS3</span>
+                    </div>
+                    <a href="https://github.com/customs-dev/www-kovarik.eu" target="_blank" rel="noopener" class="btn btn-sm btn-outline-accent mt-3">
+                        <i class="fa-brands fa-github me-1"></i>GitHub
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 fade-in fade-in-delay-2">
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fa-solid fa-building"></i>
+                    </div>
+                    <h4>Firemní informační systém</h4>
+                    <p>Enterprise IS s Angular frontendem a .NET Core backendem, autentizací a pokročilou správou dat.</p>
+                    <div class="project-tech">
+                        <span>Angular</span>
+                        <span>ASP.NET Core</span>
+                        <span>SQL Server</span>
+                        <span>Azure</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 fade-in fade-in-delay-3">
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <h4>AI Integrace</h4>
+                    <p>Integrace velkých jazykových modelů (LLM) do podnikových aplikací pomocí Azure OpenAI a Semantic Kernel.</p>
+                    <div class="project-tech">
+                        <span>Azure OpenAI</span>
+                        <span>Semantic Kernel</span>
+                        <span>C#</span>
+                        <span>.NET</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 fade-in fade-in-delay-4">
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fa-solid fa-bicycle"></i>
+                    </div>
+                    <h4>AI Cycling Coach</h4>
+                    <p>Chytrý AI asistent pro hodnocení a plánování cyklistického tréninku s plánováním tras na mapových podkladech OpenStreetMap.</p>
+                    <div class="project-tech">
+                        <span>AI</span>
+                        <span>OpenStreetMap</span>
+                        <span>Tréninkové plány</span>
+                        <span>Mapy</span>
+                    </div>
+                    <a href="https://home832.myds.me" target="_blank" rel="noopener" class="btn btn-sm btn-outline-accent mt-3">
+                        <i class="fa-solid fa-arrow-up-right-from-square me-1"></i>Spustit aplikaci
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================
+     KONTAKT
+     ============================ -->
+<section id="contact" class="section-alt">
+    <div class="container">
+        <div class="text-center mb-5">
+            <span class="section-label fade-in">// Kontakt</span>
+            <h2 class="section-title fade-in">Spojte se se mnou</h2>
+            <p class="section-subtitle fade-in mx-auto">
+                Máte projekt, na kterém bych mohl spolupracovat? Neváhejte se ozvat.
+            </p>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+            <div class="col-sm-6 col-lg-3 fade-in fade-in-delay-1">
+                <div class="contact-card">
+                    <i class="fa-solid fa-envelope"></i>
+                    <h5>E-mail</h5>
+                    <a href="mailto:roman@kovarik.eu">roman&#64;kovarik.eu</a>
+                </div>
+            </div>
+
+
+            <div class="col-sm-6 col-lg-3 fade-in fade-in-delay-3">
+                <div class="contact-card">
+                    <i class="fa-brands fa-github"></i>
+                    <h5>GitHub</h5>
+                    <a href="https://github.com/customs-dev" target="_blank" rel="noopener">GitHub profil</a>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-3 fade-in fade-in-delay-4">
+                <div class="contact-card">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <h5>Lokace</h5>
+                    <p class="mb-0">Česká republika</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
