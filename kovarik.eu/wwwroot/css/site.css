@@ -657,6 +657,10 @@ section {
     .about-highlights {
         grid-template-columns: 1fr 1fr;
     }
+
+    .hero-code-block {
+        display: none;
+    }
 }
 
 /* ============================================
