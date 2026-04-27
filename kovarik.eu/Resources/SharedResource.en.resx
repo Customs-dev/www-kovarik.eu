@@ -53,6 +53,26 @@
   <data name="Lang_Czech_Full"><value>Czech</value></data>
   <data name="Lang_English_Full"><value>English</value></data>
 
+  <!-- Command palette -->
+  <data name="CmdK_OpenAria"><value>Open quick navigation (Ctrl + K)</value></data>
+  <data name="CmdK_OpenLabel"><value>Search</value></data>
+  <data name="CmdK_DialogAria"><value>Quick navigation</value></data>
+  <data name="CmdK_Placeholder"><value>Search section or action…</value></data>
+  <data name="CmdK_NoResults"><value>No results</value></data>
+  <data name="CmdK_Group_Sections"><value>Sections</value></data>
+  <data name="CmdK_Group_Actions"><value>Actions</value></data>
+  <data name="CmdK_Group_Pages"><value>Pages</value></data>
+  <data name="CmdK_Hint_Navigate"><value>to navigate</value></data>
+  <data name="CmdK_Hint_Select"><value>to select</value></data>
+  <data name="CmdK_Hint_Close"><value>to close</value></data>
+  <data name="CmdK_Action_ToggleTheme"><value>Toggle light / dark theme</value></data>
+  <data name="CmdK_Action_LangCs"><value>Switch to Czech</value></data>
+  <data name="CmdK_Action_LangEn"><value>Switch to English</value></data>
+  <data name="CmdK_Action_Home"><value>Home (intro screen)</value></data>
+  <data name="CmdK_Action_Privacy"><value>Privacy policy</value></data>
+  <data name="CmdK_Action_Email"><value>Send email</value></data>
+  <data name="CmdK_Action_TopOfPage"><value>Jump to top of page</value></data>
+
   <data name="Footer_BuiltWith"><value>Built with .NET {0} &amp; Razor Pages</value></data>
   <data name="Footer_Privacy"><value>Privacy policy</value></data>
   <data name="Footer_BackToTop"><value>Back to top</value></data>

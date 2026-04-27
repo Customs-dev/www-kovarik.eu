@@ -305,4 +305,158 @@ document.addEventListener('DOMContentLoaded', () => {
         heroObserver.observe(canvas.parentElement);
     }
 
+    // ============================================
+    // COMMAND PALETTE (Ctrl + K / Cmd + K)
+    // ============================================
+    const cmdkBackdrop = document.getElementById('cmdkBackdrop');
+    const cmdkPanel = document.getElementById('cmdkPanel');
+    const cmdkInput = document.getElementById('cmdkInput');
+    const cmdkList = document.getElementById('cmdkList');
+    const cmdkOpen = document.getElementById('cmdkOpen');
+    const cmdkEmpty = document.getElementById('cmdkEmpty');
+
+    if (cmdkBackdrop && cmdkInput && cmdkList) {
+        const items = Array.from(cmdkList.querySelectorAll('.cmdk-item'));
+        const groups = Array.from(cmdkList.querySelectorAll('[data-group]'));
+        let activeIdx = 0;
+        let lastFocused = null;
+
+        const stripDiacritics = (s) => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+        const norm = (s) => stripDiacritics((s || '').toLowerCase()).trim();
+
+        const itemHaystack = items.map(el => {
+            const label = el.querySelector('span')?.textContent || '';
+            const keywords = el.getAttribute('data-keywords') || '';
+            return norm(label + ' ' + keywords);
+        });
+
+        const visibleItems = () => items.filter(el => !el.hidden);
+
+        const setActive = (idx) => {
+            const vis = visibleItems();
+            if (!vis.length) { activeIdx = -1; return; }
+            activeIdx = (idx + vis.length) % vis.length;
+            items.forEach(el => el.classList.remove('active'));
+            const target = vis[activeIdx];
+            target.classList.add('active');
+            target.scrollIntoView({ block: 'nearest' });
+        };
+
+        const filter = (q) => {
+            const needle = norm(q);
+            items.forEach((el, i) => {
+                el.hidden = needle.length > 0 && !itemHaystack[i].includes(needle);
+            });
+            // Hide groups whose items are all hidden
+            groups.forEach(g => {
+                const any = Array.from(g.querySelectorAll('.cmdk-item')).some(el => !el.hidden);
+                g.hidden = !any;
+            });
+            const anyVisible = visibleItems().length > 0;
+            if (cmdkEmpty) cmdkEmpty.hidden = anyVisible;
+            setActive(0);
+        };
+
+        const openPalette = () => {
+            lastFocused = document.activeElement;
+            cmdkBackdrop.hidden = false;
+            requestAnimationFrame(() => cmdkBackdrop.classList.add('open'));
+            cmdkInput.value = '';
+            filter('');
+            setTimeout(() => cmdkInput.focus(), 30);
+            document.body.style.overflow = 'hidden';
+        };
+
+        const closePalette = () => {
+            cmdkBackdrop.classList.remove('open');
+            setTimeout(() => { cmdkBackdrop.hidden = true; }, 180);
+            document.body.style.overflow = '';
+            if (lastFocused && typeof lastFocused.focus === 'function') {
+                try { lastFocused.focus(); } catch (e) { /* ignore */ }
+            }
+        };
+
+        const runItem = (el) => {
+            if (!el) return;
+            const action = el.getAttribute('data-action');
+            const href = el.getAttribute('data-href');
+            closePalette();
+            if (action === 'toggle-theme') {
+                if (themeToggle) themeToggle.click();
+                return;
+            }
+            if (action === 'scroll-top') {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                return;
+            }
+            if (href) {
+                if (href.startsWith('mailto:') || href.startsWith('http')) {
+                    window.location.href = href;
+                } else if (href.startsWith('/#')) {
+                    // Same-page hash navigation
+                    const hash = href.slice(1);
+                    if (window.location.pathname === '/' || window.location.pathname === '') {
+                        const target = document.querySelector(hash);
+                        if (target) {
+                            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            history.replaceState(null, '', hash);
+                            return;
+                        }
+                    }
+                    window.location.href = href;
+                } else {
+                    window.location.href = href;
+                }
+            }
+        };
+
+        // Open via button
+        if (cmdkOpen) cmdkOpen.addEventListener('click', openPalette);
+
+        // Global shortcut: Ctrl+K / Cmd+K  (and "/" outside inputs)
+        document.addEventListener('keydown', (e) => {
+            const isMod = e.ctrlKey || e.metaKey;
+            const tag = (e.target && e.target.tagName) || '';
+            const inEditable = tag === 'INPUT' || tag === 'TEXTAREA' || (e.target && e.target.isContentEditable);
+
+            if (isMod && (e.key === 'k' || e.key === 'K')) {
+                e.preventDefault();
+                if (cmdkBackdrop.hidden) openPalette(); else closePalette();
+                return;
+            }
+            if (e.key === '/' && !inEditable && cmdkBackdrop.hidden) {
+                e.preventDefault();
+                openPalette();
+            }
+        });
+
+        // Backdrop click closes
+        cmdkBackdrop.addEventListener('click', (e) => {
+            if (e.target === cmdkBackdrop) closePalette();
+        });
+
+        // Input handling
+        cmdkInput.addEventListener('input', (e) => filter(e.target.value));
+        cmdkInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') { e.preventDefault(); closePalette(); return; }
+            if (e.key === 'ArrowDown') { e.preventDefault(); setActive(activeIdx + 1); return; }
+            if (e.key === 'ArrowUp') { e.preventDefault(); setActive(activeIdx - 1); return; }
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                const vis = visibleItems();
+                if (vis[activeIdx]) runItem(vis[activeIdx]);
+            }
+        });
+
+        // Mouse hover sets active
+        items.forEach((el, idx) => {
+            el.addEventListener('mousemove', () => {
+                const vis = visibleItems();
+                const i = vis.indexOf(el);
+                if (i >= 0 && i !== activeIdx) setActive(i);
+            });
+            el.addEventListener('click', () => runItem(el));
+        });
+    }
+
 });

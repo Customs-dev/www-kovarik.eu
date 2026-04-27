@@ -55,6 +55,26 @@
   <data name="Lang_Czech_Full"><value>Čeština</value></data>
   <data name="Lang_English_Full"><value>Angličtina</value></data>
 
+  <!-- ====== Command palette (Ctrl+K) ====== -->
+  <data name="CmdK_OpenAria"><value>Otevřít rychlou navigaci (Ctrl + K)</value></data>
+  <data name="CmdK_OpenLabel"><value>Hledat</value></data>
+  <data name="CmdK_DialogAria"><value>Rychlá navigace</value></data>
+  <data name="CmdK_Placeholder"><value>Hledat sekci nebo akci…</value></data>
+  <data name="CmdK_NoResults"><value>Žádné výsledky</value></data>
+  <data name="CmdK_Group_Sections"><value>Sekce</value></data>
+  <data name="CmdK_Group_Actions"><value>Akce</value></data>
+  <data name="CmdK_Group_Pages"><value>Stránky</value></data>
+  <data name="CmdK_Hint_Navigate"><value>navigovat</value></data>
+  <data name="CmdK_Hint_Select"><value>vybrat</value></data>
+  <data name="CmdK_Hint_Close"><value>zavřít</value></data>
+  <data name="CmdK_Action_ToggleTheme"><value>Přepnout světlý / tmavý režim</value></data>
+  <data name="CmdK_Action_LangCs"><value>Přepnout do češtiny</value></data>
+  <data name="CmdK_Action_LangEn"><value>Přepnout do angličtiny</value></data>
+  <data name="CmdK_Action_Home"><value>Domů (úvodní obrazovka)</value></data>
+  <data name="CmdK_Action_Privacy"><value>Zásady ochrany osobních údajů</value></data>
+  <data name="CmdK_Action_Email"><value>Napsat e-mail</value></data>
+  <data name="CmdK_Action_TopOfPage"><value>Skočit na začátek stránky</value></data>
+
   <!-- ====== Footer ====== -->
   <data name="Footer_BuiltWith"><value>Postaveno na .NET {0} &amp; Razor Pages</value></data>
   <data name="Footer_Privacy"><value>Zásady ochrany osobních údajů</value></data>

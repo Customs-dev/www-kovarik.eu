@@ -112,6 +112,12 @@
                             <a class="nav-link" href="/#contact">@Localizer["Nav_Contact"]</a>
                         </li>
                         <li class="nav-item d-flex align-items-center gap-2 ms-md-2 mt-3 mt-md-0">
+                            <button type="button" id="cmdkOpen" class="cmdk-trigger"
+                                    aria-label="@Localizer["CmdK_OpenAria"]" title="@Localizer["CmdK_OpenAria"]">
+                                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                                <span class="cmdk-trigger-label">@Localizer["CmdK_OpenLabel"]</span>
+                                <kbd class="cmdk-kbd"><span class="cmdk-kbd-mod">Ctrl</span>K</kbd>
+                            </button>
                             <div class="lang-switch" role="group" aria-label="@Localizer["Lang_Switch_Aria"]">
                                 <a class="lang-btn @(culture == "cs" ? "active" : null)"
                                    href="/set-language?culture=cs&amp;returnUrl=@encodedReturnUrl"
@@ -153,6 +159,74 @@
             </p>
         </div>
     </footer>
+
+    <!-- ============================================
+         COMMAND PALETTE (Ctrl + K)
+         ============================================ -->
+    <div id="cmdkBackdrop" class="cmdk-backdrop" hidden>
+        <div id="cmdkPanel" class="cmdk-panel" role="dialog" aria-modal="true"
+             aria-label="@Localizer["CmdK_DialogAria"]" aria-labelledby="cmdkInput">
+            <div class="cmdk-input-wrap">
+                <i class="fa-solid fa-magnifying-glass cmdk-input-icon" aria-hidden="true"></i>
+                <input id="cmdkInput" type="text" class="cmdk-input" autocomplete="off"
+                       spellcheck="false" placeholder="@Localizer["CmdK_Placeholder"]" />
+                <kbd class="cmdk-esc">Esc</kbd>
+            </div>
+            <div id="cmdkList" class="cmdk-list" role="listbox">
+                <div class="cmdk-group" data-group>
+                    <div class="cmdk-group-title">@Localizer["CmdK_Group_Sections"]</div>
+                    <button type="button" class="cmdk-item" role="option" data-href="/#about" data-keywords="@Localizer["Nav_About"]">
+                        <i class="fa-solid fa-user" aria-hidden="true"></i><span>@Localizer["Nav_About"]</span>
+                    </button>
+                    <button type="button" class="cmdk-item" role="option" data-href="/#skills" data-keywords="@Localizer["Nav_Skills"]">
+                        <i class="fa-solid fa-code" aria-hidden="true"></i><span>@Localizer["Nav_Skills"]</span>
+                    </button>
+                    <button type="button" class="cmdk-item" role="option" data-href="/#experience" data-keywords="@Localizer["Nav_Experience"]">
+                        <i class="fa-solid fa-briefcase" aria-hidden="true"></i><span>@Localizer["Nav_Experience"]</span>
+                    </button>
+                    <button type="button" class="cmdk-item" role="option" data-href="/#projects" data-keywords="@Localizer["Nav_Projects"]">
+                        <i class="fa-solid fa-folder-open" aria-hidden="true"></i><span>@Localizer["Nav_Projects"]</span>
+                    </button>
+                    <button type="button" class="cmdk-item" role="option" data-href="/#contact" data-keywords="@Localizer["Nav_Contact"]">
+                        <i class="fa-solid fa-envelope" aria-hidden="true"></i><span>@Localizer["Nav_Contact"]</span>
+                    </button>
+                </div>
+                <div class="cmdk-group" data-group>
+                    <div class="cmdk-group-title">@Localizer["CmdK_Group_Actions"]</div>
+                    <button type="button" class="cmdk-item" role="option" data-action="toggle-theme" data-keywords="theme dark light @Localizer["Theme_Toggle_Aria"]">
+                        <i class="fa-solid fa-circle-half-stroke" aria-hidden="true"></i><span>@Localizer["CmdK_Action_ToggleTheme"]</span>
+                    </button>
+                    <button type="button" class="cmdk-item" role="option" data-href="/set-language?culture=cs&amp;returnUrl=@encodedReturnUrl" data-keywords="cs cestina czech jazyk language">
+                        <i class="fa-solid fa-language" aria-hidden="true"></i><span>@Localizer["CmdK_Action_LangCs"]</span>
+                    </button>
+                    <button type="button" class="cmdk-item" role="option" data-href="/set-language?culture=en&amp;returnUrl=@encodedReturnUrl" data-keywords="en english anglictina jazyk language">
+                        <i class="fa-solid fa-language" aria-hidden="true"></i><span>@Localizer["CmdK_Action_LangEn"]</span>
+                    </button>
+                    <button type="button" class="cmdk-item" role="option" data-action="scroll-top" data-keywords="top nahoru zacatek">
+                        <i class="fa-solid fa-arrow-up" aria-hidden="true"></i><span>@Localizer["CmdK_Action_TopOfPage"]</span>
+                    </button>
+                    <button type="button" class="cmdk-item" role="option" data-href="mailto:roman@kovarik.eu" data-keywords="mail email kontakt contact">
+                        <i class="fa-solid fa-paper-plane" aria-hidden="true"></i><span>@Localizer["CmdK_Action_Email"]</span>
+                    </button>
+                </div>
+                <div class="cmdk-group" data-group>
+                    <div class="cmdk-group-title">@Localizer["CmdK_Group_Pages"]</div>
+                    <button type="button" class="cmdk-item" role="option" data-href="/#hero" data-keywords="home domu uvod intro">
+                        <i class="fa-solid fa-house" aria-hidden="true"></i><span>@Localizer["CmdK_Action_Home"]</span>
+                    </button>
+                    <button type="button" class="cmdk-item" role="option" data-href="/privacy" data-keywords="privacy gdpr soukromi @Localizer["Footer_Privacy"]">
+                        <i class="fa-solid fa-shield-halved" aria-hidden="true"></i><span>@Localizer["CmdK_Action_Privacy"]</span>
+                    </button>
+                </div>
+                <div id="cmdkEmpty" class="cmdk-empty" hidden>@Localizer["CmdK_NoResults"]</div>
+            </div>
+            <div class="cmdk-footer">
+                <span><kbd>↑</kbd><kbd>↓</kbd> @Localizer["CmdK_Hint_Navigate"]</span>
+                <span><kbd>↵</kbd> @Localizer["CmdK_Hint_Select"]</span>
+                <span><kbd>Esc</kbd> @Localizer["CmdK_Hint_Close"]</span>
+            </div>
+        </div>
+    </div>
 
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
