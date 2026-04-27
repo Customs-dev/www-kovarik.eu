@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+
+  <data name="Site_TitleSuffix"><value>Roman Kovařík, M.A. | .NET Developer</value></data>
+  <data name="Site_Title_Home"><value>Personal portfolio</value></data>
+  <data name="Site_MetaDescription_Home"><value>Roman Kovařík — experienced .NET developer. Specializing in ASP.NET Core, Angular, MVC, C# and integrating artificial intelligence into web applications.</value></data>
+  <data name="Site_MetaDescription_Default"><value>Roman Kovařík — .NET developer specializing in web applications, ASP.NET Core, Angular, MVC architecture and AI integration.</value></data>
+  <data name="Site_Keywords"><value>Roman Kovarik, .NET developer, C#, ASP.NET Core, Angular, AI integration, web developer, Czech Republic</value></data>
+
+  <data name="Nav_Aria"><value>Navigation</value></data>
+  <data name="Nav_About"><value>About</value></data>
+  <data name="Nav_Skills"><value>Tech stack</value></data>
+  <data name="Nav_Experience"><value>Experience</value></data>
+  <data name="Nav_Projects"><value>Projects</value></data>
+  <data name="Nav_Contact"><value>Contact</value></data>
+  <data name="Theme_Toggle_Aria"><value>Toggle light / dark mode</value></data>
+  <data name="Lang_Switch_Aria"><value>Change language</value></data>
+  <data name="Lang_Czech_Short"><value>CZ</value></data>
+  <data name="Lang_English_Short"><value>EN</value></data>
+  <data name="Lang_Czech_Full"><value>Czech</value></data>
+  <data name="Lang_English_Full"><value>English</value></data>
+
+  <data name="Footer_BuiltWith"><value>Built with .NET {0} &amp; Razor Pages</value></data>
+  <data name="Footer_Privacy"><value>Privacy policy</value></data>
+  <data name="Footer_BackToTop"><value>Back to top</value></data>
+
+  <data name="Hero_Welcome"><value>// Welcome to my website</value></data>
+  <data name="Hero_Description"><value>I specialize in building web applications on the .NET platform, MVC architecture, Angular SPAs and integrating artificial intelligence into modern solutions.</value></data>
+  <data name="Hero_Btn_Contact"><value>Get in touch</value></data>
+  <data name="Hero_Btn_Projects"><value>My projects</value></data>
+  <data name="Hero_Typing_1"><value>.NET Developer</value></data>
+  <data name="Hero_Typing_2"><value>AI Enthusiast</value></data>
+  <data name="Hero_Typing_3"><value>Web Architect</value></data>
+  <data name="Hero_Typing_4"><value>Angular Developer</value></data>
+  <data name="Hero_Typing_5"><value>C# Expert</value></data>
+
+  <data name="About_Label"><value>// About me</value></data>
+  <data name="About_Title"><value>Who I am</value></data>
+  <data name="About_P1"><value>I'm an experienced software developer focused on .NET technologies and modern web development. I have years of practice designing and implementing web applications — from internal corporate information systems to public-facing websites.</value></data>
+  <data name="About_P2"><value>Currently I'm intensively exploring the integration of AI tools into the development process, bridging classic enterprise development with the possibilities of large language models and services such as OpenAI, Anthropic and others.</value></data>
+  <data name="About_P3"><value>Beyond development I have experience leading small teams, doing code reviews, building CI/CD pipelines and designing application architecture.</value></data>
+  <data name="About_Highlight1_Number"><value>30+</value></data>
+  <data name="About_Highlight1_Label"><value>Years in IT</value></data>
+  <data name="About_Highlight2_Number"><value>.NET</value></data>
+  <data name="About_Highlight2_Label"><value>Primary stack</value></data>
+  <data name="About_Highlight3_Number"><value>AI</value></data>
+  <data name="About_Highlight3_Label"><value>Integration</value></data>
+  <data name="About_Highlight4_Number"><value>Web</value></data>
+  <data name="About_Highlight4_Label"><value>Applications</value></data>
+
+  <data name="Skills_Label"><value>// Tech stack</value></data>
+  <data name="Skills_Title"><value>My tech stack</value></data>
+  <data name="Skills_Subtitle"><value>Technologies and tools I work with daily and on long-running projects.</value></data>
+  <data name="Skill_Cat_Backend"><value>Backend</value></data>
+  <data name="Skill_Cat_Frontend"><value>Frontend</value></data>
+  <data name="Skill_Cat_AI"><value>AI &amp; Cloud</value></data>
+  <data name="Skill_Cat_Data"><value>Data &amp; Tools</value></data>
+
+  <data name="Exp_Label"><value>// Experience</value></data>
+  <data name="Exp_Title"><value>Career</value></data>
+  <data name="Exp_Subtitle"><value>Overview of key positions and milestones from my career in software development.</value></data>
+  <data name="Exp_Period1"><value>2020 — present</value></data>
+  <data name="Exp_Role1"><value>Senior .NET Developer</value></data>
+  <data name="Exp_Company1"><value>Czech Customs</value></data>
+  <data name="Exp_Desc1"><value>Development of enterprise web applications in .NET, architecture design, AI service integration, mentoring of junior developers.</value></data>
+  <data name="Exp_Period2"><value>2007 — 2020</value></data>
+  <data name="Exp_Role2"><value>Analyst, Database Specialist, .NET Developer</value></data>
+  <data name="Exp_Company2"><value>Czech Customs</value></data>
+  <data name="Exp_Desc2"><value>Experience with the complete data processing lifecycle. Visualization and interpretation of analytical results, building data reports and dashboards, web application development with ASP.NET MVC and Angular front-end, work with SQL Server and Entity Framework.</value></data>
+  <data name="Exp_Period3"><value>1995 — 2007</value></data>
+  <data name="Exp_Role3"><value>IT Specialist</value></data>
+  <data name="Exp_Company3"><value>Czech Customs</value></data>
+  <data name="Exp_Desc3"><value>Network administration, application administration, IT user support, maintenance of information systems.</value></data>
+
+  <data name="Proj_Label"><value>// Projects</value></data>
+  <data name="Proj_Title"><value>Selected projects</value></data>
+  <data name="Proj_Subtitle"><value>A selection of projects I have worked on or that have enriched me technically.</value></data>
+  <data name="Proj_Btn_GitHub"><value>GitHub</value></data>
+  <data name="Proj_Btn_Launch"><value>Launch app</value></data>
+  <data name="Proj1_Title"><value>kovarik.eu</value></data>
+  <data name="Proj1_Desc"><value>Personal portfolio website built on .NET 10 and Razor Pages with a modern dark-themed design.</value></data>
+  <data name="Proj2_Title"><value>Corporate information system</value></data>
+  <data name="Proj2_Desc"><value>Enterprise information system with an Angular front-end and .NET Core back-end, authentication and advanced data management.</value></data>
+  <data name="Proj3_Title"><value>AI Integration</value></data>
+  <data name="Proj3_Desc"><value>Integration of large language models (LLMs) into enterprise applications using Azure OpenAI and Semantic Kernel.</value></data>
+  <data name="Proj4_Title"><value>AI Cycling Coach</value></data>
+  <data name="Proj4_Desc"><value>Smart AI assistant for evaluating and planning cycling training, including route planning on OpenStreetMap data.</value></data>
+  <data name="Proj4_Tag1"><value>Training plans</value></data>
+  <data name="Proj4_Tag2"><value>Maps</value></data>
+  <data name="Proj5_Title"><value>Watch Drift</value></data>
+  <data name="Proj5_Desc"><value>Android app for measuring the deviation of mechanical watches. You take a photo of the dial, the app records the precise time and uses the OpenClaw AI skill to read the seconds hand from the sub-dial — the result is the watch deviation in seconds.</value></data>
+  <data name="Proj6_Title"><value>Prompto — Whisper STT</value></data>
+  <data name="Proj6_Desc"><value>Windows tray application for speech-to-text transcription using Whisper. Recording via global hotkey, voice-to-text transcription with Vulkan acceleration and pasting at the cursor position. Supports WebSocket streaming and a chunked mode for live transcription.</value></data>
+
+  <data name="Contact_Label"><value>// Contact</value></data>
+  <data name="Contact_Title"><value>Get in touch</value></data>
+  <data name="Contact_Subtitle"><value>Have a project I could collaborate on? Don't hesitate to reach out.</value></data>
+  <data name="Contact_Email_Label"><value>E-mail</value></data>
+  <data name="Contact_GitHub_Label"><value>GitHub</value></data>
+  <data name="Contact_GitHub_Link"><value>GitHub profile</value></data>
+  <data name="Contact_Location_Label"><value>Location</value></data>
+  <data name="Contact_Location_Value"><value>Czech Republic</value></data>
+
+  <data name="Privacy_Title"><value>Privacy policy</value></data>
+  <data name="Privacy_MetaDescription"><value>Privacy policy of kovarik.eu — information about how visitor data is handled.</value></data>
+  <data name="Privacy_P1"><value>This website does not collect or process any personal data of its visitors. No tracking cookies, third-party analytics tools or advertising systems are used.</value></data>
+  <data name="Privacy_P2"><value>If you contact me by e-mail, your details will be used solely to reply to your message and will not be shared with any third party.</value></data>
+  <data name="Privacy_BackHome"><value>Back to home page</value></data>
+</root>

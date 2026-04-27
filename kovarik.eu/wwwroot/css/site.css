@@ -783,6 +783,47 @@ section {
 }
 
 /* ============================================
+   LANGUAGE SWITCHER
+   ============================================ */
+.lang-switch {
+    display: inline-flex;
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    padding: 2px;
+    background: transparent;
+}
+
+.lang-switch .lang-btn {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: var(--text-secondary);
+    text-decoration: none;
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    transition: color 0.25s ease, background-color 0.25s ease;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+}
+
+.lang-switch .lang-btn:hover {
+    color: var(--accent);
+}
+
+.lang-switch .lang-btn.active {
+    background: var(--accent-gradient);
+    color: var(--bg-primary);
+    cursor: default;
+}
+
+.lang-switch .lang-btn:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+/* ============================================
    REDUCED MOTION
    ============================================ */
 @media (prefers-reduced-motion: reduce) {

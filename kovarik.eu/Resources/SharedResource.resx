@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+
+  <!-- ====== Page titles & meta ====== -->
+  <data name="Site_TitleSuffix"><value>Mgr. Roman Kovařík | .NET Developer</value></data>
+  <data name="Site_Title_Home"><value>Osobní webová prezentace</value></data>
+  <data name="Site_MetaDescription_Home"><value>Mgr. Roman Kovařík — zkušený .NET vývojář. Specializace na ASP.NET Core, Angular, MVC, C# a integraci umělé inteligence do webových aplikací.</value></data>
+  <data name="Site_MetaDescription_Default"><value>Mgr. Roman Kovařík — .NET vývojář specializující se na webové aplikace, ASP.NET Core, Angular, MVC architekturu a AI integraci.</value></data>
+  <data name="Site_Keywords"><value>Roman Kovařík, .NET developer, C#, ASP.NET Core, Angular, AI integrace, webový vývojář, Česká republika</value></data>
+
+  <!-- ====== Navbar ====== -->
+  <data name="Nav_Aria"><value>Navigace</value></data>
+  <data name="Nav_About"><value>O mně</value></data>
+  <data name="Nav_Skills"><value>Technologie</value></data>
+  <data name="Nav_Experience"><value>Zkušenosti</value></data>
+  <data name="Nav_Projects"><value>Projekty</value></data>
+  <data name="Nav_Contact"><value>Kontakt</value></data>
+  <data name="Theme_Toggle_Aria"><value>Přepnout světlý/tmavý režim</value></data>
+  <data name="Lang_Switch_Aria"><value>Změnit jazyk</value></data>
+  <data name="Lang_Czech_Short"><value>CZ</value></data>
+  <data name="Lang_English_Short"><value>EN</value></data>
+  <data name="Lang_Czech_Full"><value>Čeština</value></data>
+  <data name="Lang_English_Full"><value>Angličtina</value></data>
+
+  <!-- ====== Footer ====== -->
+  <data name="Footer_BuiltWith"><value>Postaveno na .NET {0} &amp; Razor Pages</value></data>
+  <data name="Footer_Privacy"><value>Zásady ochrany osobních údajů</value></data>
+  <data name="Footer_BackToTop"><value>Zpět nahoru</value></data>
+
+  <!-- ====== Hero ====== -->
+  <data name="Hero_Welcome"><value>// Vítejte na mém webu</value></data>
+  <data name="Hero_Description"><value>Specializuji se na vývoj webových aplikací postavených na platformě .NET, MVC architektuře, Angular SPA a integraci umělé inteligence do moderních řešení.</value></data>
+  <data name="Hero_Btn_Contact"><value>Kontaktujte mě</value></data>
+  <data name="Hero_Btn_Projects"><value>Moje projekty</value></data>
+  <data name="Hero_Typing_1"><value>.NET Developer</value></data>
+  <data name="Hero_Typing_2"><value>AI Enthusiast</value></data>
+  <data name="Hero_Typing_3"><value>Web Architect</value></data>
+  <data name="Hero_Typing_4"><value>Angular Developer</value></data>
+  <data name="Hero_Typing_5"><value>C# Expert</value></data>
+
+  <!-- ====== About ====== -->
+  <data name="About_Label"><value>// O mně</value></data>
+  <data name="About_Title"><value>Kdo jsem</value></data>
+  <data name="About_P1"><value>Jsem zkušený softwarový vývojář se zaměřením na technologie .NET a moderní webový vývoj. Mám za sebou roky praxe v návrhu a implementaci webových aplikací — od firemních informačních systémů po veřejné internetové prezentace.</value></data>
+  <data name="About_P2"><value>V současné době se intenzivně věnuji integraci AI nástrojů do vývojového procesu a snažím se propojit klasický enterprise vývoj s možnostmi, které nabízí velké jazykové modely a služby jako OpenAI, Anthropic a další.</value></data>
+  <data name="About_P3"><value>Kromě vývoje mám zkušenosti s vedením menších týmů, code review, CI/CD pipeline a architektonickým designem aplikací.</value></data>
+  <data name="About_Highlight1_Number"><value>30+</value></data>
+  <data name="About_Highlight1_Label"><value>Let v IT</value></data>
+  <data name="About_Highlight2_Number"><value>.NET</value></data>
+  <data name="About_Highlight2_Label"><value>Primární stack</value></data>
+  <data name="About_Highlight3_Number"><value>AI</value></data>
+  <data name="About_Highlight3_Label"><value>Integrace</value></data>
+  <data name="About_Highlight4_Number"><value>Web</value></data>
+  <data name="About_Highlight4_Label"><value>Aplikace</value></data>
+
+  <!-- ====== Skills ====== -->
+  <data name="Skills_Label"><value>// Technologie</value></data>
+  <data name="Skills_Title"><value>Můj tech stack</value></data>
+  <data name="Skills_Subtitle"><value>Technologie a nástroje, se kterými pracuji denně i v rámci dlouhodobých projektů.</value></data>
+  <data name="Skill_Cat_Backend"><value>Backend</value></data>
+  <data name="Skill_Cat_Frontend"><value>Frontend</value></data>
+  <data name="Skill_Cat_AI"><value>AI &amp; Cloud</value></data>
+  <data name="Skill_Cat_Data"><value>Data &amp; Nástroje</value></data>
+
+  <!-- ====== Experience ====== -->
+  <data name="Exp_Label"><value>// Zkušenosti</value></data>
+  <data name="Exp_Title"><value>Profesní kariéra</value></data>
+  <data name="Exp_Subtitle"><value>Přehled klíčových pozic a milníků mé kariéry ve světě softwarového vývoje.</value></data>
+  <data name="Exp_Period1"><value>2020 — současnost</value></data>
+  <data name="Exp_Role1"><value>Senior .NET Developer</value></data>
+  <data name="Exp_Company1"><value>Czech Customs</value></data>
+  <data name="Exp_Desc1"><value>Vývoj enterprise webových aplikací v .NET, návrh architektury, integrace AI služeb, mentoring juniorních vývojářů.</value></data>
+  <data name="Exp_Period2"><value>2007 — 2020</value></data>
+  <data name="Exp_Role2"><value>Analytik, Databázový specialista, .NET Developer</value></data>
+  <data name="Exp_Company2"><value>Czech Customs</value></data>
+  <data name="Exp_Desc2"><value>Zkušenosti s kompletním cyklem zpracování dat. Vizualizace a interpretace analytických výsledků, praxe s tvorbou datových reportů a dashboardů, vývoj webových aplikací, ASP.NET MVC, angular frontend, práce s SQL Server a Entity Framework.</value></data>
+  <data name="Exp_Period3"><value>1995 — 2007</value></data>
+  <data name="Exp_Role3"><value>Informatik</value></data>
+  <data name="Exp_Company3"><value>Czech Customs</value></data>
+  <data name="Exp_Desc3"><value>Správa sítí, správa aplikací, IT uživatelská podpora, údržba informačních systémů.</value></data>
+
+  <!-- ====== Projects ====== -->
+  <data name="Proj_Label"><value>// Projekty</value></data>
+  <data name="Proj_Title"><value>Vybrané projekty</value></data>
+  <data name="Proj_Subtitle"><value>Ukázky projektů, na kterých jsem pracoval nebo které mě technicky obohatily.</value></data>
+  <data name="Proj_Btn_GitHub"><value>GitHub</value></data>
+  <data name="Proj_Btn_Launch"><value>Spustit aplikaci</value></data>
+  <data name="Proj1_Title"><value>kovarik.eu</value></data>
+  <data name="Proj1_Desc"><value>Osobní webová prezentace postavená na .NET 10 a Razor Pages s moderním dark theme designem.</value></data>
+  <data name="Proj2_Title"><value>Firemní informační systém</value></data>
+  <data name="Proj2_Desc"><value>Enterprise IS s Angular frontendem a .NET Core backendem, autentizací a pokročilou správou dat.</value></data>
+  <data name="Proj3_Title"><value>AI Integrace</value></data>
+  <data name="Proj3_Desc"><value>Integrace velkých jazykových modelů (LLM) do podnikových aplikací pomocí Azure OpenAI a Semantic Kernel.</value></data>
+  <data name="Proj4_Title"><value>AI Cycling Coach</value></data>
+  <data name="Proj4_Desc"><value>Chytrý AI asistent pro hodnocení a plánování cyklistického tréninku s plánováním tras na mapových podkladech OpenStreetMap.</value></data>
+  <data name="Proj4_Tag1"><value>Tréninkové plány</value></data>
+  <data name="Proj4_Tag2"><value>Mapy</value></data>
+  <data name="Proj5_Title"><value>Watch Drift</value></data>
+  <data name="Proj5_Desc"><value>Android aplikace pro měření odchylky mechanických hodinek. Vyfotíte ciferník, aplikace zaznamená přesný čas a pomocí AI skillu OpenClaw odečte sekundovou ručičku ze subdialu — výsledkem je odchylka hodinek v sekundách.</value></data>
+  <data name="Proj6_Title"><value>Prompto — Whisper STT</value></data>
+  <data name="Proj6_Desc"><value>Windows tray aplikace pro speech-to-text přepis pomocí Whisper. Nahrávání přes globální hotkey, přepis hlasu do textu s Vulkan akcelerací a vložení na pozici kurzoru. Podporuje WebSocket stream a chunked režim pro živý přepis.</value></data>
+
+  <!-- ====== Contact ====== -->
+  <data name="Contact_Label"><value>// Kontakt</value></data>
+  <data name="Contact_Title"><value>Spojte se se mnou</value></data>
+  <data name="Contact_Subtitle"><value>Máte projekt, na kterém bych mohl spolupracovat? Neváhejte se ozvat.</value></data>
+  <data name="Contact_Email_Label"><value>E-mail</value></data>
+  <data name="Contact_GitHub_Label"><value>GitHub</value></data>
+  <data name="Contact_GitHub_Link"><value>GitHub profil</value></data>
+  <data name="Contact_Location_Label"><value>Lokace</value></data>
+  <data name="Contact_Location_Value"><value>Česká republika</value></data>
+
+  <!-- ====== Privacy ====== -->
+  <data name="Privacy_Title"><value>Zásady ochrany osobních údajů</value></data>
+  <data name="Privacy_MetaDescription"><value>Zásady ochrany osobních údajů webu kovarik.eu — informace o nakládání s osobními údaji návštěvníků.</value></data>
+  <data name="Privacy_P1"><value>Tento web neshromažďuje ani nezpracovává žádné osobní údaje návštěvníků. Nejsou používány cookies pro sledování, analytické nástroje třetích stran ani reklamní systémy.</value></data>
+  <data name="Privacy_P2"><value>V případě, že mě kontaktujete prostřednictvím e-mailu, vaše údaje budou použity výhradně za účelem odpovědi na vaši zprávu a nebudou sdíleny s třetími stranami.</value></data>
+  <data name="Privacy_BackHome"><value>Zpět na hlavní stránku</value></data>
+</root>

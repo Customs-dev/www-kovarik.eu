@@ -1,29 +1,21 @@
-﻿@page
+@page
 @model PrivacyModel
 @{
-    ViewData["Title"] = "Zásady ochrany osobních údajů";
-    ViewData["MetaDescription"] = "Zásady ochrany osobních údajů webu kovarik.eu — informace o nakládání s osobními údaji návštěvníků.";
+    ViewData["Title"] = Localizer["Privacy_Title"].Value;
+    ViewData["MetaDescription"] = Localizer["Privacy_MetaDescription"].Value;
 }
 
 <section class="py-5 mt-5">
     <div class="container" style="max-width: 800px;">
-        <h1 class="section-title mb-4">@ViewData["Title"]</h1>
+        <h1 class="section-title mb-4">@Localizer["Privacy_Title"]</h1>
         <hr class="section-divider" />
 
         <div class="about-text">
-            <p>
-                Tento web neshromažďuje ani nezpracovává žádné osobní údaje návštěvníků.
-                Nejsou používány cookies pro sledování, analytické nástroje třetích stran
-                ani reklamní systémy.
-            </p>
-            <p>
-                V případě, že mě kontaktujete prostřednictvím e-mailu, vaše údaje budou
-                použity výhradně za účelem odpovědi na vaši zprávu a nebudou sdíleny
-                s třetími stranami.
-            </p>
+            <p>@Localizer["Privacy_P1"]</p>
+            <p>@Localizer["Privacy_P2"]</p>
             <p>
                 <a href="/" class="btn btn-outline-accent mt-3">
-                    <i class="fa-solid fa-arrow-left me-2"></i>Zpět na hlavní stránku
+                    <i class="fa-solid fa-arrow-left me-2"></i>@Localizer["Privacy_BackHome"]
                 </a>
             </p>
         </div>

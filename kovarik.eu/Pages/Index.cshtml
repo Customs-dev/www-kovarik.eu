@@ -1,8 +1,8 @@
-﻿@page
+@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Osobní webová prezentace";
-    ViewData["MetaDescription"] = "Mgr. Roman Kovařík — zkušený .NET vývojář. Specializace na ASP.NET Core, Angular, MVC, C# a integraci umělé inteligence do webových aplikací.";
+    ViewData["Title"] = Localizer["Site_Title_Home"].Value;
+    ViewData["MetaDescription"] = Localizer["Site_MetaDescription_Home"].Value;
 }
 
 @section Head {
@@ -14,7 +14,7 @@
         "name": "Mgr. Roman Kovařík",
         "url": "https://kovarik.eu",
         "jobTitle": ".NET Developer",
-        "description": "Zkušený .NET vývojář specializující se na webové aplikace, ASP.NET Core, Angular, MVC architekturu a AI integraci.",
+        "description": "@Html.Raw(Localizer["Site_MetaDescription_Home"].Value.Replace("\"", "\\\""))",
         "knowsAbout": [".NET", "C#", "ASP.NET Core", "Angular", "TypeScript", "AI", "Azure", "SQL Server", "MVC", "Razor Pages"],
         "address": {
             "@@type": "PostalAddress",
@@ -31,35 +31,33 @@
         "@@type": "WebSite",
         "name": "kovarik.eu",
         "url": "https://kovarik.eu",
-        "description": "Osobní webová prezentace Mgr. Romana Kovaříka — .NET Developer & AI Enthusiast",
-        "inLanguage": "cs"
+        "description": "@Html.Raw(Localizer["Site_MetaDescription_Home"].Value.Replace("\"", "\\\""))",
+        "inLanguage": "@System.Globalization.CultureInfo.CurrentUICulture.TwoLetterISOLanguageName"
     }
     </script>
 }
 
-<!-- ============================
-     HERO SECTION
-     ============================ -->
+<!-- ============================ HERO ============================ -->
 <section id="hero" class="hero-section">
     <canvas id="particleCanvas"></canvas>
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6 mb-5 mb-lg-0">
-                <p class="hero-label fade-in">// Vítejte na mém webu</p>
+                <p class="hero-label fade-in">@Localizer["Hero_Welcome"]</p>
                 <h1 class="hero-name fade-in fade-in-delay-1">Mgr. Roman<br />Kovařík</h1>
                 <p class="hero-title fade-in fade-in-delay-2">
-                    <span id="typingText"></span><span class="typing-cursor"></span>
+                    <span id="typingText"
+                          data-phrases="@Localizer["Hero_Typing_1"]|@Localizer["Hero_Typing_2"]|@Localizer["Hero_Typing_3"]|@Localizer["Hero_Typing_4"]|@Localizer["Hero_Typing_5"]"></span><span class="typing-cursor"></span>
                 </p>
                 <p class="hero-description fade-in fade-in-delay-3">
-                    Specializuji se na vývoj webových aplikací postavených na platformě .NET,
-                    MVC architektuře, Angular SPA a integraci umělé inteligence do moderních řešení.
+                    @Localizer["Hero_Description"]
                 </p>
                 <div class="d-flex gap-3 flex-wrap fade-in fade-in-delay-4">
                     <a href="#contact" class="btn btn-accent">
-                        <i class="fa-solid fa-paper-plane me-2"></i>Kontaktujte mě
+                        <i class="fa-solid fa-paper-plane me-2"></i>@Localizer["Hero_Btn_Contact"]
                     </a>
                     <a href="#projects" class="btn btn-outline-accent">
-                        <i class="fa-solid fa-code me-2"></i>Moje projekty
+                        <i class="fa-solid fa-code me-2"></i>@Localizer["Hero_Btn_Projects"]
                     </a>
                 </div>
             </div>
@@ -84,50 +82,37 @@
     </div>
 </section>
 
-<!-- ============================
-     O MNĚ
-     ============================ -->
+<!-- ============================ ABOUT ============================ -->
 <section id="about" class="section-alt">
     <div class="container">
         <div class="row">
             <div class="col-lg-6 mb-4 mb-lg-0">
-                <span class="section-label fade-in">// O mně</span>
-                <h2 class="section-title fade-in">Kdo jsem</h2>
+                <span class="section-label fade-in">@Localizer["About_Label"]</span>
+                <h2 class="section-title fade-in">@Localizer["About_Title"]</h2>
                 <hr class="section-divider fade-in" />
                 <div class="about-text fade-in">
-                    <p>
-                        Jsem zkušený softwarový vývojář se zaměřením na technologie .NET a moderní
-                        webový vývoj. Mám za sebou roky praxe v návrhu a implementaci webových
-                        aplikací — od firemních informačních systémů po veřejné internetové prezentace.
-                    </p>
-                    <p>
-                        V současné době se intenzivně věnuji integraci AI nástrojů do vývojového
-                        procesu a snažím se propojit klasický enterprise vývoj s možnostmi,
-                        které nabízí velké jazykové modely a služby jako OpenAI, Anthropic a další.
-                    </p>
-                    <p>
-                        Kromě vývoje mám zkušenosti s vedením menších týmů, code review,
-                        CI/CD pipeline a architektonickým designem aplikací.
-                    </p>
+                    <p>@Localizer["About_P1"]</p>
+                    <p>@Localizer["About_P2"]</p>
+                    <p>@Localizer["About_P3"]</p>
                 </div>
             </div>
             <div class="col-lg-5 offset-lg-1">
                 <div class="about-highlights fade-in">
                     <div class="highlight-item">
-                        <span class="highlight-number">30+</span>
-                        <span class="highlight-label">Let v IT</span>
+                        <span class="highlight-number">@Localizer["About_Highlight1_Number"]</span>
+                        <span class="highlight-label">@Localizer["About_Highlight1_Label"]</span>
                     </div>
                     <div class="highlight-item">
-                        <span class="highlight-number">.NET</span>
-                        <span class="highlight-label">Primární stack</span>
+                        <span class="highlight-number">@Localizer["About_Highlight2_Number"]</span>
+                        <span class="highlight-label">@Localizer["About_Highlight2_Label"]</span>
                     </div>
                     <div class="highlight-item">
-                        <span class="highlight-number">AI</span>
-                        <span class="highlight-label">Integrace</span>
+                        <span class="highlight-number">@Localizer["About_Highlight3_Number"]</span>
+                        <span class="highlight-label">@Localizer["About_Highlight3_Label"]</span>
                     </div>
                     <div class="highlight-item">
-                        <span class="highlight-number">Web</span>
-                        <span class="highlight-label">Aplikace</span>
+                        <span class="highlight-number">@Localizer["About_Highlight4_Number"]</span>
+                        <span class="highlight-label">@Localizer["About_Highlight4_Label"]</span>
                     </div>
                 </div>
             </div>
@@ -135,19 +120,17 @@
     </div>
 </section>
 
-<!-- ============================
-     TECHNOLOGIE
-     ============================ -->
+<!-- ============================ SKILLS ============================ -->
 <section id="skills">
     <div class="container">
-        <span class="section-label fade-in">// Technologie</span>
-        <h2 class="section-title fade-in">Můj tech stack</h2>
-        <p class="section-subtitle fade-in">Technologie a nástroje, se kterými pracuji denně i v rámci dlouhodobých projektů.</p>
+        <span class="section-label fade-in">@Localizer["Skills_Label"]</span>
+        <h2 class="section-title fade-in">@Localizer["Skills_Title"]</h2>
+        <p class="section-subtitle fade-in">@Localizer["Skills_Subtitle"]</p>
 
         <div class="row">
             <div class="col-lg-6">
                 <div class="skill-category fade-in">
-                    <h3 class="skill-category-title"><i class="fa-solid fa-server"></i> Backend</h3>
+                    <h3 class="skill-category-title"><i class="fa-solid fa-server"></i> @Localizer["Skill_Cat_Backend"]</h3>
                     <div class="skill-tags">
                         <span class="skill-tag">C#</span>
                         <span class="skill-tag">.NET 10</span>
@@ -162,7 +145,7 @@
                 </div>
 
                 <div class="skill-category fade-in">
-                    <h3 class="skill-category-title"><i class="fa-solid fa-palette"></i> Frontend</h3>
+                    <h3 class="skill-category-title"><i class="fa-solid fa-palette"></i> @Localizer["Skill_Cat_Frontend"]</h3>
                     <div class="skill-tags">
                         <span class="skill-tag">Angular</span>
                         <span class="skill-tag">TypeScript</span>
@@ -176,7 +159,7 @@
 
             <div class="col-lg-6">
                 <div class="skill-category fade-in">
-                    <h3 class="skill-category-title"><i class="fa-solid fa-brain"></i> AI &amp; Cloud</h3>
+                    <h3 class="skill-category-title"><i class="fa-solid fa-brain"></i> @Localizer["Skill_Cat_AI"]</h3>
                     <div class="skill-tags">
                         <span class="skill-tag">Azure OpenAI</span>
                         <span class="skill-tag">GitHub Copilot</span>
@@ -185,7 +168,7 @@
                 </div>
 
                 <div class="skill-category fade-in">
-                    <h3 class="skill-category-title"><i class="fa-solid fa-database"></i> Data &amp; Nástroje</h3>
+                    <h3 class="skill-category-title"><i class="fa-solid fa-database"></i> @Localizer["Skill_Cat_Data"]</h3>
                     <div class="skill-tags">
                         <span class="skill-tag">SQL Server</span>
                         <span class="skill-tag">PostgreSQL</span>
@@ -202,50 +185,39 @@
     </div>
 </section>
 
-<!-- ============================
-     ZKUŠENOSTI
-     ============================ -->
+<!-- ============================ EXPERIENCE ============================ -->
 <section id="experience" class="section-alt">
     <div class="container">
         <div class="row">
             <div class="col-lg-5 mb-4 mb-lg-0">
-                <span class="section-label fade-in">// Zkušenosti</span>
-                <h2 class="section-title fade-in">Profesní kariéra</h2>
+                <span class="section-label fade-in">@Localizer["Exp_Label"]</span>
+                <h2 class="section-title fade-in">@Localizer["Exp_Title"]</h2>
                 <hr class="section-divider fade-in" />
                 <p class="section-subtitle fade-in" style="max-width: none;">
-                    Přehled klíčových pozic a milníků mé kariéry ve světě softwarového vývoje.
+                    @Localizer["Exp_Subtitle"]
                 </p>
             </div>
             <div class="col-lg-6 offset-lg-1">
                 <div class="timeline fade-in">
                     <div class="timeline-item">
-                        <span class="timeline-period">2020 — současnost</span>
-                        <h4 class="timeline-role">Senior .NET Developer</h4>
-                        <p class="timeline-company">Czech Customs</p>
-                        <p class="timeline-desc">
-                            Vývoj enterprise webových aplikací v .NET, návrh architektury,
-                            integrace AI služeb, mentoring juniorních vývojářů.
-                        </p>
+                        <span class="timeline-period">@Localizer["Exp_Period1"]</span>
+                        <h4 class="timeline-role">@Localizer["Exp_Role1"]</h4>
+                        <p class="timeline-company">@Localizer["Exp_Company1"]</p>
+                        <p class="timeline-desc">@Localizer["Exp_Desc1"]</p>
                     </div>
 
                     <div class="timeline-item">
-                        <span class="timeline-period">2007 — 2020</span>
-                        <h4 class="timeline-role">Analytik, Databázový specialista, .NET Developer</h4>
-                        <p class="timeline-company">Czech Customs</p>
-                        <p class="timeline-desc">
-                            Zkušenosti s kompletním cyklem zpracování dat. Vizualizace a interpretace analytických výsledků,
-                            praxe s tvorbou datových reportů a dashboardů, vývoj webových aplikací, ASP.NET MVC,
-                            angular frontend, práce s SQL Server a Entity Framework.
-                        </p>
+                        <span class="timeline-period">@Localizer["Exp_Period2"]</span>
+                        <h4 class="timeline-role">@Localizer["Exp_Role2"]</h4>
+                        <p class="timeline-company">@Localizer["Exp_Company2"]</p>
+                        <p class="timeline-desc">@Localizer["Exp_Desc2"]</p>
                     </div>
 
                     <div class="timeline-item">
-                        <span class="timeline-period">1995 — 2007</span>
-                        <h4 class="timeline-role">Informatik</h4>
-                        <p class="timeline-company">Czech Customs</p>
-                        <p class="timeline-desc">
-                            Správa sítí, správa aplikací, IT uživatelská podpora, údržba informačních systémů.
-                        </p>
+                        <span class="timeline-period">@Localizer["Exp_Period3"]</span>
+                        <h4 class="timeline-role">@Localizer["Exp_Role3"]</h4>
+                        <p class="timeline-company">@Localizer["Exp_Company3"]</p>
+                        <p class="timeline-desc">@Localizer["Exp_Desc3"]</p>
                     </div>
                 </div>
             </div>
@@ -253,122 +225,88 @@
     </div>
 </section>
 
-<!-- ============================
-     PROJEKTY
-     ============================ -->
+<!-- ============================ PROJECTS ============================ -->
 <section id="projects">
     <div class="container">
-        <span class="section-label fade-in">// Projekty</span>
-        <h2 class="section-title fade-in">Vybrané projekty</h2>
-        <p class="section-subtitle fade-in">Ukázky projektů, na kterých jsem pracoval nebo které mě technicky obohatily.</p>
+        <span class="section-label fade-in">@Localizer["Proj_Label"]</span>
+        <h2 class="section-title fade-in">@Localizer["Proj_Title"]</h2>
+        <p class="section-subtitle fade-in">@Localizer["Proj_Subtitle"]</p>
 
         <div class="row g-4">
-            <!-- TODO: Nahraďte skutečnými projekty -->
             <div class="col-md-6 col-lg-4 fade-in fade-in-delay-1">
                 <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fa-solid fa-globe"></i>
-                    </div>
-                    <h4>kovarik.eu</h4>
-                    <p>Osobní webová prezentace postavená na .NET 10 a Razor Pages s moderním dark theme designem.</p>
+                    <div class="project-icon"><i class="fa-solid fa-globe"></i></div>
+                    <h4>@Localizer["Proj1_Title"]</h4>
+                    <p>@Localizer["Proj1_Desc"]</p>
                     <div class="project-tech">
-                        <span>.NET 10</span>
-                        <span>Razor Pages</span>
-                        <span>Bootstrap 5</span>
-                        <span>CSS3</span>
+                        <span>.NET 10</span><span>Razor Pages</span><span>Bootstrap 5</span><span>CSS3</span>
                     </div>
                     <a href="https://github.com/customs-dev/www-kovarik.eu" target="_blank" rel="noopener" class="btn btn-sm btn-outline-accent mt-3">
-                        <i class="fa-brands fa-github me-1"></i>GitHub
+                        <i class="fa-brands fa-github me-1"></i>@Localizer["Proj_Btn_GitHub"]
                     </a>
                 </div>
             </div>
 
             <div class="col-md-6 col-lg-4 fade-in fade-in-delay-2">
                 <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fa-solid fa-building"></i>
-                    </div>
-                    <h4>Firemní informační systém</h4>
-                    <p>Enterprise IS s Angular frontendem a .NET Core backendem, autentizací a pokročilou správou dat.</p>
+                    <div class="project-icon"><i class="fa-solid fa-building"></i></div>
+                    <h4>@Localizer["Proj2_Title"]</h4>
+                    <p>@Localizer["Proj2_Desc"]</p>
                     <div class="project-tech">
-                        <span>Angular</span>
-                        <span>ASP.NET Core</span>
-                        <span>SQL Server</span>
-                        <span>Azure</span>
+                        <span>Angular</span><span>ASP.NET Core</span><span>SQL Server</span><span>Azure</span>
                     </div>
                 </div>
             </div>
 
             <div class="col-md-6 col-lg-4 fade-in fade-in-delay-3">
                 <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fa-solid fa-robot"></i>
-                    </div>
-                    <h4>AI Integrace</h4>
-                    <p>Integrace velkých jazykových modelů (LLM) do podnikových aplikací pomocí Azure OpenAI a Semantic Kernel.</p>
+                    <div class="project-icon"><i class="fa-solid fa-robot"></i></div>
+                    <h4>@Localizer["Proj3_Title"]</h4>
+                    <p>@Localizer["Proj3_Desc"]</p>
                     <div class="project-tech">
-                        <span>Azure OpenAI</span>
-                        <span>Semantic Kernel</span>
-                        <span>C#</span>
-                        <span>.NET</span>
+                        <span>Azure OpenAI</span><span>Semantic Kernel</span><span>C#</span><span>.NET</span>
                     </div>
                 </div>
             </div>
 
             <div class="col-md-6 col-lg-4 fade-in fade-in-delay-4">
                 <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fa-solid fa-bicycle"></i>
-                    </div>
-                    <h4>AI Cycling Coach</h4>
-                    <p>Chytrý AI asistent pro hodnocení a plánování cyklistického tréninku s plánováním tras na mapových podkladech OpenStreetMap.</p>
+                    <div class="project-icon"><i class="fa-solid fa-bicycle"></i></div>
+                    <h4>@Localizer["Proj4_Title"]</h4>
+                    <p>@Localizer["Proj4_Desc"]</p>
                     <div class="project-tech">
-                        <span>AI</span>
-                        <span>OpenStreetMap</span>
-                        <span>Tréninkové plány</span>
-                        <span>Mapy</span>
+                        <span>AI</span><span>OpenStreetMap</span><span>@Localizer["Proj4_Tag1"]</span><span>@Localizer["Proj4_Tag2"]</span>
                     </div>
                     <a href="https://home832.myds.me" target="_blank" rel="noopener" class="btn btn-sm btn-outline-accent mt-3">
-                        <i class="fa-solid fa-arrow-up-right-from-square me-1"></i>Spustit aplikaci
+                        <i class="fa-solid fa-arrow-up-right-from-square me-1"></i>@Localizer["Proj_Btn_Launch"]
                     </a>
                 </div>
             </div>
 
             <div class="col-md-6 col-lg-4 fade-in fade-in-delay-5">
                 <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fa-solid fa-stopwatch"></i>
-                    </div>
-                    <h4>Watch Drift</h4>
-                    <p>Android aplikace pro měření odchylky mechanických hodinek. Vyfotíte ciferník, aplikace zaznamená přesný čas a pomocí AI skillu OpenClaw odečte sekundovou ručičku ze subdialu — výsledkem je odchylka hodinek v sekundách.</p>
+                    <div class="project-icon"><i class="fa-solid fa-stopwatch"></i></div>
+                    <h4>@Localizer["Proj5_Title"]</h4>
+                    <p>@Localizer["Proj5_Desc"]</p>
                     <div class="project-tech">
-                        <span>Kotlin</span>
-                        <span>Jetpack Compose</span>
-                        <span>CameraX</span>
-                        <span>AI / Gemini</span>
+                        <span>Kotlin</span><span>Jetpack Compose</span><span>CameraX</span><span>AI / Gemini</span>
                     </div>
                     <a href="https://github.com/Customs-dev/WatchDriftAndroidApp" target="_blank" rel="noopener" class="btn btn-sm btn-outline-accent mt-3">
-                        <i class="fa-brands fa-github me-1"></i>GitHub
+                        <i class="fa-brands fa-github me-1"></i>@Localizer["Proj_Btn_GitHub"]
                     </a>
                 </div>
             </div>
 
             <div class="col-md-6 col-lg-4 fade-in fade-in-delay-6">
                 <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fa-solid fa-microphone"></i>
-                    </div>
-                    <h4>Prompto — Whisper STT</h4>
-                    <p>Windows tray aplikace pro speech-to-text přepis pomocí Whisper. Nahrávání přes globální hotkey, přepis hlasu do textu s Vulkan akcelerací a vložení na pozici kurzoru. Podporuje WebSocket stream a chunked režim pro živý přepis.</p>
+                    <div class="project-icon"><i class="fa-solid fa-microphone"></i></div>
+                    <h4>@Localizer["Proj6_Title"]</h4>
+                    <p>@Localizer["Proj6_Desc"]</p>
                     <div class="project-tech">
-                        <span>.NET 9</span>
-                        <span>WinForms</span>
-                        <span>Whisper</span>
-                        <span>WebSocket</span>
-                        <span>Vulkan</span>
+                        <span>.NET 9</span><span>WinForms</span><span>Whisper</span><span>WebSocket</span><span>Vulkan</span>
                     </div>
                     <a href="https://github.com/Customs-dev/STT-Whisper-Dotnet-APP" target="_blank" rel="noopener" class="btn btn-sm btn-outline-accent mt-3">
-                        <i class="fa-brands fa-github me-1"></i>GitHub
+                        <i class="fa-brands fa-github me-1"></i>@Localizer["Proj_Btn_GitHub"]
                     </a>
                 </div>
             </div>
@@ -376,42 +314,37 @@
     </div>
 </section>
 
-<!-- ============================
-     KONTAKT
-     ============================ -->
+<!-- ============================ CONTACT ============================ -->
 <section id="contact" class="section-alt">
     <div class="container">
         <div class="text-center mb-5">
-            <span class="section-label fade-in">// Kontakt</span>
-            <h2 class="section-title fade-in">Spojte se se mnou</h2>
-            <p class="section-subtitle fade-in mx-auto">
-                Máte projekt, na kterém bych mohl spolupracovat? Neváhejte se ozvat.
-            </p>
+            <span class="section-label fade-in">@Localizer["Contact_Label"]</span>
+            <h2 class="section-title fade-in">@Localizer["Contact_Title"]</h2>
+            <p class="section-subtitle fade-in mx-auto">@Localizer["Contact_Subtitle"]</p>
         </div>
 
         <div class="row g-4 justify-content-center">
             <div class="col-sm-6 col-lg-3 fade-in fade-in-delay-1">
                 <div class="contact-card">
                     <i class="fa-solid fa-envelope"></i>
-                    <h5>E-mail</h5>
+                    <h5>@Localizer["Contact_Email_Label"]</h5>
                     <a href="mailto:roman@kovarik.eu">roman&#64;kovarik.eu</a>
                 </div>
             </div>
 
-
             <div class="col-sm-6 col-lg-3 fade-in fade-in-delay-3">
                 <div class="contact-card">
                     <i class="fa-brands fa-github"></i>
-                    <h5>GitHub</h5>
-                    <a href="https://github.com/customs-dev" target="_blank" rel="noopener">GitHub profil</a>
+                    <h5>@Localizer["Contact_GitHub_Label"]</h5>
+                    <a href="https://github.com/customs-dev" target="_blank" rel="noopener">@Localizer["Contact_GitHub_Link"]</a>
                 </div>
             </div>
 
             <div class="col-sm-6 col-lg-3 fade-in fade-in-delay-4">
                 <div class="contact-card">
                     <i class="fa-solid fa-location-dot"></i>
-                    <h5>Lokace</h5>
-                    <p class="mb-0">Česká republika</p>
+                    <h5>@Localizer["Contact_Location_Label"]</h5>
+                    <p class="mb-0">@Localizer["Contact_Location_Value"]</p>
                 </div>
             </div>
         </div>

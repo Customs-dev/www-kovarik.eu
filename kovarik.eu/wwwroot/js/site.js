@@ -132,7 +132,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // ============================================
     const typingEl = document.getElementById('typingText');
     if (typingEl) {
-        const phrases = [
+        const dataPhrases = (typingEl.getAttribute('data-phrases') || '').split('|').filter(Boolean);
+        const phrases = dataPhrases.length ? dataPhrases : [
             '.NET Developer',
             'AI Enthusiast',
             'Web Architect',
