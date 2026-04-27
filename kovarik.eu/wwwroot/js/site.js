@@ -4,6 +4,47 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+    // ============================================
+    // THEME TOGGLE (light / dark)
+    // ============================================
+    const themeToggle = document.getElementById('themeToggle');
+    const metaThemeColor = document.getElementById('metaThemeColor');
+    const themeColors = { dark: '#0f0f1a', light: '#f8f9fb' };
+
+    const applyTheme = (theme) => {
+        document.documentElement.setAttribute('data-bs-theme', theme);
+        if (metaThemeColor) metaThemeColor.setAttribute('content', themeColors[theme] || themeColors.dark);
+        if (themeToggle) {
+            themeToggle.setAttribute('aria-pressed', theme === 'light' ? 'true' : 'false');
+        }
+    };
+
+    // Initialize from the value the inline head script already set
+    const initialTheme = document.documentElement.getAttribute('data-bs-theme') || 'dark';
+    applyTheme(initialTheme);
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            const current = document.documentElement.getAttribute('data-bs-theme') === 'light' ? 'light' : 'dark';
+            const next = current === 'light' ? 'dark' : 'light';
+            applyTheme(next);
+            try { localStorage.setItem('theme', next); } catch (e) { /* ignore */ }
+        });
+    }
+
+    // Follow OS changes only when user has not chosen explicitly
+    if (window.matchMedia) {
+        const mq = window.matchMedia('(prefers-color-scheme: light)');
+        const listener = (e) => {
+            try {
+                if (localStorage.getItem('theme')) return;
+            } catch (err) { /* ignore */ }
+            applyTheme(e.matches ? 'light' : 'dark');
+        };
+        if (mq.addEventListener) mq.addEventListener('change', listener);
+        else if (mq.addListener) mq.addListener(listener);
+    }
+
     // ---- Scroll-based fade-in animations ----
     const fadeElements = document.querySelectorAll('.fade-in');
     const observerOptions = {

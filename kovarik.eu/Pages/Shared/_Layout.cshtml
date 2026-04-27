@@ -1,9 +1,22 @@
 ﻿<!DOCTYPE html>
-<html lang="cs" data-bs-theme="dark">
+<html lang="cs">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#0f0f1a" />
+    <meta name="theme-color" id="metaThemeColor" content="#0f0f1a" />
+    <script>
+        // Anti-FOUC: nastav téma co nejdříve před prvním renderem.
+        (function () {
+            try {
+                var stored = localStorage.getItem('theme');
+                var prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+                var theme = stored || (prefersLight ? 'light' : 'dark');
+                document.documentElement.setAttribute('data-bs-theme', theme);
+            } catch (e) {
+                document.documentElement.setAttribute('data-bs-theme', 'dark');
+            }
+        })();
+    </script>
     <title>@(ViewData["Title"]) — Mgr. Roman Kovařík | .NET Developer</title>
 
     <!-- SEO Meta -->
@@ -57,7 +70,7 @@
     <div id="scrollProgress"></div>
 
     <header>
-        <nav class="navbar navbar-expand-md fixed-top navbar-dark" id="mainNav">
+        <nav class="navbar navbar-expand-md fixed-top" id="mainNav">
             <div class="container">
                 <a class="navbar-brand fw-bold" href="/#hero">
                     <i class="fa-solid fa-terminal me-2"></i>kovarik.eu
@@ -67,7 +80,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
+                    <ul class="navbar-nav ms-auto align-items-md-center">
                         <li class="nav-item">
                             <a class="nav-link" href="/#about">O mně</a>
                         </li>
@@ -82,6 +95,13 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/#contact">Kontakt</a>
+                        </li>
+                        <li class="nav-item">
+                            <button type="button" id="themeToggle" class="theme-toggle"
+                                    aria-label="Přepnout světlý/tmavý režim" title="Přepnout světlý/tmavý režim">
+                                <i class="fa-solid fa-sun icon-sun" aria-hidden="true"></i>
+                                <i class="fa-solid fa-moon icon-moon" aria-hidden="true"></i>
+                            </button>
                         </li>
                     </ul>
                 </div>
